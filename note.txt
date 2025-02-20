@@ -1,0 +1,117 @@
+superuser:
+
+admin@gmail.com
+admin1234
+
+BaseURL : http://127.0.0.1:8000
+
+
+
+/api/v1/auth/register
+
+body:
+{
+    "username": "vibob60475",
+    "email": "vibob60475@sectorid.com",
+    "password": "securepassword123",
+    "confirm_password": "securepassword123",
+}
+{
+    "username": "sibak89991",
+    "email": "sibak89991@kytstore.com",
+    "password": "securepassword123",
+    "confirm_password": "securepassword123"
+
+}
+
+/api/v1/auth/login
+
+{
+    "identifier": "vibob60475@sectorid.com",
+    "password": "securepassword123"
+}
+{
+    "identifier": "vibob60475",
+    "password": "securepassword123"
+}
+
+
+get check :
+/api/v1/auth/protected-endpoint
+
+Allow: GET, PUT, PATCH, HEAD, OPTIONS:
+/api/v1/auth/profile
+
+get  Access token :
+/api/v1/auth/token/refresh/
+
+{
+    "refresh":""
+}
+
+
+/api/v1/auth/password-change/:
+
+{
+    "old_password": "securepassword123",
+    "new_password": "newpassword456",
+    "confirm_password": "newpassword456"
+}
+
+
+password change : 
+
+/api/v1/auth/forgot-password/
+
+{
+"email":"mdmerazul65@gmail.com"
+}
+
+
+/api/v1/auth/reset-password/email/otp/
+api/v1/auth/reset-password/mdmerazul65@gmail.com/TOHYCH/
+{
+    "email":"mdmerazul65@gmail.com"
+    "otp":"",
+    "new_password": "newpassword456",
+    "confirm_password": "newpassword456"
+}
+
+# ---- google auth
+   
+/api/v1/auth/google/
+/api/v1/auth/google/callback/
+
+
+
+{
+    "username": "mdmerazul65",
+    "email": "mdmerazul65@gmail.com",
+    "password": "securepassword123",
+    "confirm_password": "securepassword123",
+  
+}
+
+
+
+services------------------------
+http://127.0.0.1:8000/api/v1/services/items
+
+{
+    "name": "",
+    "image": null,
+    "description": "",
+    "price": null
+}
+
+
+
+review --------------------------------------------------------
+
+
+
+http://127.0.0.1:8000/api/v1/reviews/reviews-list/
+{
+    "rating": 3,
+    "comment": "nice product "
+}
