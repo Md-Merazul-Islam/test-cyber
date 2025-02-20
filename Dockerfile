@@ -1,5 +1,5 @@
 # Use official Python image
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Set working directory
 WORKDIR /app
@@ -15,4 +15,4 @@ COPY . /app/
 EXPOSE 8000
 
 # Run Gunicorn with your project’s WSGI entry point
-CMD ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "cyber_security.wsgi.application", "--bind", "0.0.0.0:8000"]
