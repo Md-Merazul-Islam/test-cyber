@@ -82,13 +82,6 @@ WSGI_APPLICATION = 'cyber_security.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -275,6 +268,23 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = "http://127.0.0.1:8000/api/v1/auth/goog
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydb',
+        'USER': 'user',
+        'PASSWORD': 'password',
+        'HOST': 'db',  # Refers to the PostgreSQL container name in Docker Compose
+        'PORT': '5432',  # Default PostgreSQL port
+    }
+}
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # DigitalOcean Spaces (similar to AWS S3).----------------------------------------------------------------
 
@@ -292,10 +302,10 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # AWS_SECRET_ACCESS_KEY="e5+/pko6Ojar51Hb8ojUKfq2HtXy+tnGKOfs3rIcEfo"
 # AWS_STORAGE_BUCKET_NAME="smtech-space"
 
-AWS_S3_ENDPOINT_URL="https://nyc3.digitaloceanspaces.com"
-AWS_ACCESS_KEY_ID="DO002RGDJ947DJHJ9WDT"
-AWS_SECRET_ACCESS_KEY="e5+/pko6Ojar51Hb8ojUKfq2HtXy+tnGKOfs3rIcEfo"
-AWS_STORAGE_BUCKET_NAME="smtech-space"
+AWS_S3_ENDPOINT_URL = "https://nyc3.digitaloceanspaces.com"
+AWS_ACCESS_KEY_ID = "DO002RGDJ947DJHJ9WDT"
+AWS_SECRET_ACCESS_KEY = "e5+/pko6Ojar51Hb8ojUKfq2HtXy+tnGKOfs3rIcEfo"
+AWS_STORAGE_BUCKET_NAME = "smtech-space"
 
 # Set permissions
 AWS_QUERYSTRING_AUTH = False
